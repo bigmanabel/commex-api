@@ -16,6 +16,9 @@ export class ProductsService {
         ...createProductDto,
         category: {
           id: createProductDto.category
+        },
+        region: {
+          id: createProductDto.region
         }
       });
 
@@ -88,6 +91,9 @@ export class ProductsService {
         ...updateProductDto,
         category: {
           id: updateProductDto.category
+        }, 
+        region: {
+          id: updateProductDto.region
         }
       });
 
