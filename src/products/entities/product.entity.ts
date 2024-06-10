@@ -28,6 +28,6 @@ export class Product {
     @ManyToOne(() => Category, category => category.products)
     category: Category;
 
-    @OneToOne(() => Region)
+    @ManyToOne(() => Region, region => region.products)
     region: Region;
 }
