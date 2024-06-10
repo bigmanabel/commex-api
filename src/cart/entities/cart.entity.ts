@@ -1,6 +1,7 @@
 import { Product } from "src/products/entities/product.entity";
-import { Column, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
+@Entity()
 export class Cart {
     @PrimaryGeneratedColumn()
     id: number;
