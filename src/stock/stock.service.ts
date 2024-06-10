@@ -13,9 +13,28 @@ export class StockService {
 
   async findAll() {
     try {
-      return `This action returns all stock`;
+      const products = await this.productRepository.find({
+        select: {
+          id: true,
+          name: true,
+          stockQuantity: true
+        }
+      });
+
+      if (products.length < 1) {
+        throw new NotFoundException('No product found');
+      }
+
+      return {
+        statusCode: HttpStatus.OK,
+        message: 'Products retrieved successfully',
+        data: products,
+      }
     } catch (error) {
-      
+      if (error.status === HttpStatus.NOT_FOUND) {
+        throw new NotFoundException(error.message);
+      }
+      throw new BadRequestException(error.message);
     }
   }
 
