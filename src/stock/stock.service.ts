@@ -1,26 +1,45 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, HttpStatus, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateStockDto } from './dto/create-stock.dto';
 import { UpdateStockDto } from './dto/update-stock.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Product } from 'src/products/entities/product.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class StockService {
-  create(createStockDto: CreateStockDto) {
-    return 'This action adds a new stock';
+  constructor(
+    @InjectRepository(Product) private readonly productRepository: Repository<Product>,
+  ) {}
+
+  async findAll() {
+    try {
+      return `This action returns all stock`;
+    } catch (error) {
+      
+    }
   }
 
-  findAll() {
-    return `This action returns all stock`;
-  }
+  async findOne(id: number) {
+    try {
+      const product = await this.productRepository.find({
+        where: {
+          id
+        },
+        select: {
+          id: true,
+          name: true,
+          stockQuantity: true
+        }
+      });
 
-  findOne(id: number) {
-    return `This action returns a #${id} stock`;
-  }
-
-  update(id: number, updateStockDto: UpdateStockDto) {
-    return `This action updates a #${id} stock`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} stock`;
+      if (!product) {
+        throw new NotFoundException('Product not found');
+      }
+    } catch (error) {
+      if (error.status === HttpStatus.NOT_FOUND) {
+        throw new NotFoundException(error.message);
+      }
+      throw new BadRequestException(error.message);
+    }
   }
 }
