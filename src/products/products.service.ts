@@ -3,7 +3,9 @@ import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Product } from './entities/product.entity';
-import { Repository } from 'typeorm';
+import { FindOptionsWhere, Like, Repository } from 'typeorm';
+import { PaginationQueryDto } from 'src/shared/dto/pagination-query.dto';
+import { FindProductsByDto } from './dto/find-products-by.dto';
 
 @Injectable()
 export class ProductsService {
@@ -34,9 +36,23 @@ export class ProductsService {
     }
   }
 
-  async findAll() {
+  async findAll(paginationQueryDto: PaginationQueryDto, findProductsByDto: FindProductsByDto) {
+    const { limit, offset } = paginationQueryDto;
+    const { name, category, region } = findProductsByDto;
+
     try {
-      const products = await this.productRepository.find();
+      const conditions: FindOptionsWhere<Product> | FindOptionsWhere<Product>[] = {
+        ...(name ? { name: Like(`%${name}%`) } : {}),
+        ...(category ? { category: { id: category } } : {}),
+        ...(region ? { region: { id: region } } : {}),
+      }
+
+      const products = await this.productRepository.find({
+        where: conditions,
+        take: limit,
+        skip: offset,
+        relations: ['category', 'region'],
+      });
 
       if (products.length < 1) {
         throw new HttpException({

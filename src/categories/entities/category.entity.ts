@@ -9,6 +9,9 @@ export class Category {
     @Column()
     name: string;
 
+    @Column({ nullable: true })
+    image: string;
+
     @CreateDateColumn()
     createdAt: Date;
 
