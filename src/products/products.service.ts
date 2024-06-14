@@ -14,7 +14,7 @@ export class ProductsService {
   ) {}
   async create(createProductDto: CreateProductDto) {
     try {
-      const product = await this.productRepository.create({
+      const product = this.productRepository.create({
         ...createProductDto,
         category: {
           id: createProductDto.category

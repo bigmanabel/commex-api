@@ -4,20 +4,23 @@ import { UpdateCartDto } from './dto/update-cart.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Cart } from './entities/cart.entity';
 import { Repository } from 'typeorm';
+import { Product } from 'src/products/entities/product.entity';
 
 @Injectable()
 export class CartService {
   constructor(
     @InjectRepository(Cart) private readonly cartRepository: Repository<Cart>,
+    @InjectRepository(Product) private readonly productRepository: Repository<Product>,
   ) { }
 
   async create(createCartDto: CreateCartDto) {
     try {
-      const cart = await this.cartRepository.create({
-        product: {
-          id: createCartDto.product
-        },
-        quantity: createCartDto.quantity
+      const product = await this.productRepository.findOneBy({
+        id: createCartDto.product })
+
+      const cart = this.cartRepository.create({
+        quantity: createCartDto.quantity,
+        product
       });
 
       await this.cartRepository.save(cart);
@@ -34,10 +37,19 @@ export class CartService {
 
   async findAll() {
     try {
-      const cart = await this.cartRepository.find();
+      const cart = await this.cartRepository.find({
+        relations: ['product'],
+        
+      });
 
       if (cart.length < 1) {
         throw new HttpException('Cart is empty', HttpStatus.NO_CONTENT);
+      }
+
+      return {
+        statusCode: HttpStatus.OK,
+        message: 'Cart retrieved successfully',
+        data: cart,
       }
 
     } catch (error) {

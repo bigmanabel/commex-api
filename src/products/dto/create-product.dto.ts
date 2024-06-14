@@ -1,9 +1,11 @@
 import { Transform } from "class-transformer";
-import { IsDecimal, IsNumber, IsString } from "class-validator";
+import { IsNumber, IsString } from "class-validator";
 
 export class CreateProductDto {
     @IsString()
     name: string;
+    
+    image: Buffer;
     
     @IsString()
     description: string;
