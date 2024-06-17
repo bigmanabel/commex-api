@@ -3,7 +3,7 @@ import { CreateRegionDto } from './dto/create-region.dto';
 import { UpdateRegionDto } from './dto/update-region.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Region } from './entities/region.entity';
-import { Repository } from 'typeorm';
+import { IsNull, Not, Repository } from 'typeorm';
 
 @Injectable()
 export class RegionsService {
@@ -31,7 +31,13 @@ export class RegionsService {
 
   async findAll() {
     try {
-      const regions = await this.regionRepository.find();
+      const regions = await this.regionRepository.find({
+        where: {
+          products: {
+            id: Not(IsNull())
+          }
+        }
+      });
 
       if (regions.length < 1) {
         throw new HttpException('No region found', HttpStatus.NO_CONTENT);
