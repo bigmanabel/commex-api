@@ -3,7 +3,7 @@ import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Product } from './entities/product.entity';
-import { FindOptionsWhere, Like, Repository } from 'typeorm';
+import { Between, FindOptionsWhere, Like, Repository } from 'typeorm';
 import { PaginationQueryDto } from 'src/shared/dto/pagination-query.dto';
 import { FindProductsByDto } from './dto/find-products-by.dto';
 
@@ -38,13 +38,14 @@ export class ProductsService {
 
   async findAll(paginationQueryDto: PaginationQueryDto, findProductsByDto: FindProductsByDto) {
     const { limit, offset } = paginationQueryDto;
-    const { name, category, region } = findProductsByDto;
+    const { name, category, region, min, max } = findProductsByDto;
 
     try {
       const conditions: FindOptionsWhere<Product> | FindOptionsWhere<Product>[] = {
         ...(name ? { name: Like(`%${name}%`) } : {}),
         ...(category ? { category: { id: category } } : {}),
         ...(region ? { region: { id: region } } : {}),
+        ...( min && max ? { price: Between(min, max) } : {}),
       }
 
       const products = await this.productRepository.find({

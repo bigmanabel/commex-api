@@ -35,6 +35,6 @@ export class Product {
     @ManyToOne(() => Region, region => region.products)
     region: Region;
 
-    @OneToOne(() => Cart, cart => cart.product, {eager: true})
+    @OneToOne(() => Cart, cart => cart.product)
     cart: Cart;
 }

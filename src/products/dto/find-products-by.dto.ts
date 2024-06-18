@@ -11,4 +11,12 @@ export class FindProductsByDto {
     @IsOptional()
     @IsPositive()
     region: number;
+
+    @IsOptional()
+    @IsPositive()
+    min: number;
+
+    @IsOptional()
+    @IsPositive()
+    max: number;
 }
