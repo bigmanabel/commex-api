@@ -31,13 +31,7 @@ export class RegionsService {
 
   async findAll() {
     try {
-      const regions = await this.regionRepository.find({
-        where: {
-          products: {
-            id: Not(IsNull())
-          }
-        }
-      });
+      const regions = await this.regionRepository.find();
 
       if (regions.length < 1) {
         throw new HttpException('No region found', HttpStatus.NO_CONTENT);
