@@ -5,8 +5,9 @@ import { UpdateProductDto } from './dto/update-product.dto';
 import { PaginationQueryDto } from 'src/shared/dto/pagination-query.dto';
 import { FindProductsByDto } from './dto/find-products-by.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { ApiResponse } from '@nestjs/swagger';
+import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('products')
 @Controller('products')
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) { }
