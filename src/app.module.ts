@@ -21,9 +21,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       password: process.env.DB_PASS,
       autoLoadEntities: true,
       synchronize: true,
-      ssl: {
-        rejectUnauthorized: false,
-      }
+      // ssl: {
+      //   rejectUnauthorized: false,
+      // }
     }),
     ProductsModule,
     CartModule,
