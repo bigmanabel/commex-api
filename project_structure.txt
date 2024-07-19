@@ -1,0 +1,461 @@
+Folder PATH listing
+Volume serial number is 6273-FC2E
+C:.
+�   .env
+�   .eslintrc.js
+�   .gitignore
+�   .prettierrc
+�   compose.yml
+�   nest-cli.json
+�   package.json
+�   project_structure.txt
+�   README.md
+�   tsconfig.build.json
+�   tsconfig.json
+�   yarn.lock
+�   
++---apps
+�   +---commex-api
+�   �   �   tsconfig.app.json
+�   �   �   
+�   �   +---src
+�   �   �   �   app.controller.spec.ts
+�   �   �   �   app.controller.ts
+�   �   �   �   app.module.ts
+�   �   �   �   app.service.ts
+�   �   �   �   main.ts
+�   �   �   �   
+�   �   �   +---cart
+�   �   �   �   �   cart.controller.spec.ts
+�   �   �   �   �   cart.controller.ts
+�   �   �   �   �   cart.module.ts
+�   �   �   �   �   cart.service.spec.ts
+�   �   �   �   �   cart.service.ts
+�   �   �   �   �   
+�   �   �   �   +---dto
+�   �   �   �   �       create-cart.dto.ts
+�   �   �   �   �       update-cart.dto.ts
+�   �   �   �   �       
+�   �   �   �   +---entities
+�   �   �   �           cart.entity.ts
+�   �   �   �           
+�   �   �   +---categories
+�   �   �   �   �   categories.controller.spec.ts
+�   �   �   �   �   categories.controller.ts
+�   �   �   �   �   categories.module.ts
+�   �   �   �   �   categories.service.spec.ts
+�   �   �   �   �   categories.service.ts
+�   �   �   �   �   
+�   �   �   �   +---dto
+�   �   �   �   �       create-category.dto.ts
+�   �   �   �   �       update-category.dto.ts
+�   �   �   �   �       
+�   �   �   �   +---entities
+�   �   �   �           category.entity.ts
+�   �   �   �           
+�   �   �   +---products
+�   �   �   �   �   products.controller.spec.ts
+�   �   �   �   �   products.controller.ts
+�   �   �   �   �   products.module.ts
+�   �   �   �   �   products.service.spec.ts
+�   �   �   �   �   products.service.ts
+�   �   �   �   �   
+�   �   �   �   +---dto
+�   �   �   �   �       create-product.dto.ts
+�   �   �   �   �       find-products-by.dto.ts
+�   �   �   �   �       update-product.dto.ts
+�   �   �   �   �       
+�   �   �   �   +---entities
+�   �   �   �           product.entity.ts
+�   �   �   �           
+�   �   �   +---regions
+�   �   �   �   �   regions.controller.spec.ts
+�   �   �   �   �   regions.controller.ts
+�   �   �   �   �   regions.module.ts
+�   �   �   �   �   regions.service.spec.ts
+�   �   �   �   �   regions.service.ts
+�   �   �   �   �   
+�   �   �   �   +---dto
+�   �   �   �   �       create-region.dto.ts
+�   �   �   �   �       update-region.dto.ts
+�   �   �   �   �       
+�   �   �   �   +---entities
+�   �   �   �           region.entity.ts
+�   �   �   �           
+�   �   �   +---shared
+�   �   �   �   +---dto
+�   �   �   �           pagination-query.dto.ts
+�   �   �   �           
+�   �   �   +---shops
+�   �   �   �   �   shops.controller.spec.ts
+�   �   �   �   �   shops.controller.ts
+�   �   �   �   �   shops.module.ts
+�   �   �   �   �   shops.service.spec.ts
+�   �   �   �   �   shops.service.ts
+�   �   �   �   �   
+�   �   �   �   +---dto
+�   �   �   �   �       create-shop.dto.ts
+�   �   �   �   �       update-shop.dto.ts
+�   �   �   �   �       
+�   �   �   �   +---entities
+�   �   �   �           shop.entity.ts
+�   �   �   �           
+�   �   �   +---stock
+�   �   �       �   stock.controller.spec.ts
+�   �   �       �   stock.controller.ts
+�   �   �       �   stock.module.ts
+�   �   �       �   stock.service.spec.ts
+�   �   �       �   stock.service.ts
+�   �   �       �   
+�   �   �       +---dto
+�   �   �       �       create-stock.dto.ts
+�   �   �       �       update-stock.dto.ts
+�   �   �       �       
+�   �   �       +---entities
+�   �   �               stock.entity.ts
+�   �   �               
+�   �   +---test
+�   �           app.e2e-spec.ts
+�   �           jest-e2e.json
+�   �           
+�   +---delivery-service
+�   �   �   tsconfig.app.json
+�   �   �   
+�   �   +---src
+�   �   �   �   delivery-service.controller.spec.ts
+�   �   �   �   delivery-service.controller.ts
+�   �   �   �   delivery-service.module.ts
+�   �   �   �   delivery-service.service.ts
+�   �   �   �   main.ts
+�   �   �   �   
+�   �   �   +---deliveries
+�   �   �       �   deliveries.controller.spec.ts
+�   �   �       �   deliveries.controller.ts
+�   �   �       �   deliveries.module.ts
+�   �   �       �   deliveries.service.spec.ts
+�   �   �       �   deliveries.service.ts
+�   �   �       �   
+�   �   �       +---dto
+�   �   �       �       create-delivery.dto.ts
+�   �   �       �       update-delivery.dto.ts
+�   �   �       �       
+�   �   �       +---entities
+�   �   �               delivery.entity.ts
+�   �   �               
+�   �   +---test
+�   �           app.e2e-spec.ts
+�   �           jest-e2e.json
+�   �           
+�   +---order-service
+�   �   �   tsconfig.app.json
+�   �   �   
+�   �   +---src
+�   �   �   �   main.ts
+�   �   �   �   order-service.controller.spec.ts
+�   �   �   �   order-service.controller.ts
+�   �   �   �   order-service.module.ts
+�   �   �   �   order-service.service.ts
+�   �   �   �   
+�   �   �   +---orders
+�   �   �       �   orders.controller.spec.ts
+�   �   �       �   orders.controller.ts
+�   �   �       �   orders.module.ts
+�   �   �       �   orders.service.spec.ts
+�   �   �       �   orders.service.ts
+�   �   �       �   
+�   �   �       +---dto
+�   �   �       �       create-order.dto.ts
+�   �   �       �       update-order.dto.ts
+�   �   �       �       
+�   �   �       +---entities
+�   �   �               order.entity.ts
+�   �   �               
+�   �   +---test
+�   �           app.e2e-spec.ts
+�   �           jest-e2e.json
+�   �           
+�   +---user-service
+�       �   tsconfig.app.json
+�       �   
+�       +---src
+�       �   �   main.ts
+�       �   �   user-service.controller.spec.ts
+�       �   �   user-service.controller.ts
+�       �   �   user-service.module.ts
+�       �   �   user-service.service.ts
+�       �   �   
+�       �   +---iam
+�       �   �   �   iam.constants.ts
+�       �   �   �   iam.module.ts
+�       �   �   �   
+�       �   �   +---authentication
+�       �   �   �   �   authentication.controller.spec.ts
+�       �   �   �   �   authentication.controller.ts
+�       �   �   �   �   authentication.service.spec.ts
+�       �   �   �   �   authentication.service.ts
+�       �   �   �   �   otp-authentication.service.spec.ts
+�       �   �   �   �   otp-authentication.service.ts
+�       �   �   �   �   refresh-token-ids.storage.ts
+�       �   �   �   �   
+�       �   �   �   +---decorators
+�       �   �   �   �       auth.decorator.ts
+�       �   �   �   �       
+�       �   �   �   +---dto
+�       �   �   �   �       google-token.dto.ts
+�       �   �   �   �       refresh-token.dto.ts
+�       �   �   �   �       sign-in.dto.ts
+�       �   �   �   �       sign-up.dto.ts
+�       �   �   �   �       
+�       �   �   �   +---enums
+�       �   �   �   �       auth-type.enum.ts
+�       �   �   �   �       
+�       �   �   �   +---guards
+�       �   �   �   �       access-token.guard.spec.ts
+�       �   �   �   �       access-token.guard.ts
+�       �   �   �   �       authentication.guard.spec.ts
+�       �   �   �   �       authentication.guard.ts
+�       �   �   �   �       
+�       �   �   �   +---social
+�       �   �   �           google-authentication.controller.spec.ts
+�       �   �   �           google-authentication.controller.ts
+�       �   �   �           google-authentication.service.spec.ts
+�       �   �   �           google-authentication.service.ts
+�       �   �   �           
+�       �   �   +---authorization
+�       �   �   �   +---decorators
+�       �   �   �   �       roles.decorator.ts
+�       �   �   �   �       
+�       �   �   �   +---guards
+�       �   �   �           roles.guard.spec.ts
+�       �   �   �           roles.guard.ts
+�       �   �   �           
+�       �   �   +---config
+�       �   �   �       jwt.config.ts
+�       �   �   �       
+�       �   �   +---decorators
+�       �   �   �       active-user.decorator.ts
+�       �   �   �       
+�       �   �   +---hashing
+�       �   �   �       bcrypt.service.spec.ts
+�       �   �   �       bcrypt.service.ts
+�       �   �   �       hashing.service.spec.ts
+�       �   �   �       hashing.service.ts
+�       �   �   �       
+�       �   �   +---interfaces
+�       �   �           active-user-data.interface.ts
+�       �   �           
+�       �   +---users
+�       �       �   users.controller.spec.ts
+�       �       �   users.controller.ts
+�       �       �   users.module.ts
+�       �       �   users.service.spec.ts
+�       �       �   users.service.ts
+�       �       �   
+�       �       +---admins
+�       �       �   �   admins.controller.spec.ts
+�       �       �   �   admins.controller.ts
+�       �       �   �   admins.module.ts
+�       �       �   �   admins.service.spec.ts
+�       �       �   �   admins.service.ts
+�       �       �   �   
+�       �       �   +---dto
+�       �       �   �       create-admin.dto.ts
+�       �       �   �       update-admin.dto.ts
+�       �       �   �       
+�       �       �   +---entities
+�       �       �           admin.entity.ts
+�       �       �           
+�       �       +---customers
+�       �       �   �   customers.controller.spec.ts
+�       �       �   �   customers.controller.ts
+�       �       �   �   customers.module.ts
+�       �       �   �   customers.service.spec.ts
+�       �       �   �   customers.service.ts
+�       �       �   �   
+�       �       �   +---dto
+�       �       �   �       create-customer.dto.ts
+�       �       �   �       update-customer.dto.ts
+�       �       �   �       
+�       �       �   +---entities
+�       �       �           customer.entity.ts
+�       �       �           
+�       �       +---dto
+�       �       �       create-user.dto.ts
+�       �       �       update-user.dto.ts
+�       �       �       
+�       �       +---entities
+�       �       �       user.entity.ts
+�       �       �       
+�       �       +---enums
+�       �       �       role.enum.ts
+�       �       �       
+�       �       +---shop-owners
+�       �           �   shop-owners.controller.spec.ts
+�       �           �   shop-owners.controller.ts
+�       �           �   shop-owners.module.ts
+�       �           �   shop-owners.service.spec.ts
+�       �           �   shop-owners.service.ts
+�       �           �   
+�       �           +---dto
+�       �           �       create-shop-owner.dto.ts
+�       �           �       update-shop-owner.dto.ts
+�       �           �       
+�       �           +---entities
+�       �                   shop-owner.entity.ts
+�       �                   
+�       +---test
+�               app.e2e-spec.ts
+�               jest-e2e.json
+�               
++---dist
+�   �   app.controller.d.ts
+�   �   app.controller.js
+�   �   app.controller.js.map
+�   �   app.module.d.ts
+�   �   app.module.js
+�   �   app.module.js.map
+�   �   app.service.d.ts
+�   �   app.service.js
+�   �   app.service.js.map
+�   �   main.d.ts
+�   �   main.js
+�   �   main.js.map
+�   �   tsconfig.build.tsbuildinfo
+�   �   
+�   +---apps
+�   �   +---commex-api
+�   �   �       main.js
+�   �   �       
+�   �   +---user-service
+�   �           main.js
+�   �           
+�   +---cart
+�   �   �   cart.controller.d.ts
+�   �   �   cart.controller.js
+�   �   �   cart.controller.js.map
+�   �   �   cart.module.d.ts
+�   �   �   cart.module.js
+�   �   �   cart.module.js.map
+�   �   �   cart.service.d.ts
+�   �   �   cart.service.js
+�   �   �   cart.service.js.map
+�   �   �   
+�   �   +---dto
+�   �   �       create-cart.dto.d.ts
+�   �   �       create-cart.dto.js
+�   �   �       create-cart.dto.js.map
+�   �   �       update-cart.dto.d.ts
+�   �   �       update-cart.dto.js
+�   �   �       update-cart.dto.js.map
+�   �   �       
+�   �   +---entities
+�   �           cart.entity.d.ts
+�   �           cart.entity.js
+�   �           cart.entity.js.map
+�   �           
+�   +---categories
+�   �   �   categories.controller.d.ts
+�   �   �   categories.controller.js
+�   �   �   categories.controller.js.map
+�   �   �   categories.module.d.ts
+�   �   �   categories.module.js
+�   �   �   categories.module.js.map
+�   �   �   categories.service.d.ts
+�   �   �   categories.service.js
+�   �   �   categories.service.js.map
+�   �   �   
+�   �   +---dto
+�   �   �       create-category.dto.d.ts
+�   �   �       create-category.dto.js
+�   �   �       create-category.dto.js.map
+�   �   �       update-category.dto.d.ts
+�   �   �       update-category.dto.js
+�   �   �       update-category.dto.js.map
+�   �   �       
+�   �   +---entities
+�   �           category.entity.d.ts
+�   �           category.entity.js
+�   �           category.entity.js.map
+�   �           
+�   +---products
+�   �   �   products.controller.d.ts
+�   �   �   products.controller.js
+�   �   �   products.controller.js.map
+�   �   �   products.module.d.ts
+�   �   �   products.module.js
+�   �   �   products.module.js.map
+�   �   �   products.service.d.ts
+�   �   �   products.service.js
+�   �   �   products.service.js.map
+�   �   �   
+�   �   +---dto
+�   �   �       create-product.dto.d.ts
+�   �   �       create-product.dto.js
+�   �   �       create-product.dto.js.map
+�   �   �       find-products-by.dto.d.ts
+�   �   �       find-products-by.dto.js
+�   �   �       find-products-by.dto.js.map
+�   �   �       update-product.dto.d.ts
+�   �   �       update-product.dto.js
+�   �   �       update-product.dto.js.map
+�   �   �       
+�   �   +---entities
+�   �           product.entity.d.ts
+�   �           product.entity.js
+�   �           product.entity.js.map
+�   �           
+�   +---regions
+�   �   �   regions.controller.d.ts
+�   �   �   regions.controller.js
+�   �   �   regions.controller.js.map
+�   �   �   regions.module.d.ts
+�   �   �   regions.module.js
+�   �   �   regions.module.js.map
+�   �   �   regions.service.d.ts
+�   �   �   regions.service.js
+�   �   �   regions.service.js.map
+�   �   �   
+�   �   +---dto
+�   �   �       create-region.dto.d.ts
+�   �   �       create-region.dto.js
+�   �   �       create-region.dto.js.map
+�   �   �       update-region.dto.d.ts
+�   �   �       update-region.dto.js
+�   �   �       update-region.dto.js.map
+�   �   �       
+�   �   +---entities
+�   �           region.entity.d.ts
+�   �           region.entity.js
+�   �           region.entity.js.map
+�   �           
+�   +---shared
+�   �   +---dto
+�   �           pagination-query.dto.d.ts
+�   �           pagination-query.dto.js
+�   �           pagination-query.dto.js.map
+�   �           
+�   +---stock
+�       �   stock.controller.d.ts
+�       �   stock.controller.js
+�       �   stock.controller.js.map
+�       �   stock.module.d.ts
+�       �   stock.module.js
+�       �   stock.module.js.map
+�       �   stock.service.d.ts
+�       �   stock.service.js
+�       �   stock.service.js.map
+�       �   
+�       +---dto
+�       �       create-stock.dto.d.ts
+�       �       create-stock.dto.js
+�       �       create-stock.dto.js.map
+�       �       update-stock.dto.d.ts
+�       �       update-stock.dto.js
+�       �       update-stock.dto.js.map
+�       �       
+�       +---entities
+�               stock.entity.d.ts
+�               stock.entity.js
+�               stock.entity.js.map
+�               
+

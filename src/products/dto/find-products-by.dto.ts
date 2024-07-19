@@ -5,18 +5,14 @@ export class FindProductsByDto {
     name: string;
 
     @IsOptional()
-    @IsPositive()
     category: number;
 
     @IsOptional()
-    @IsPositive()
     region: number;
 
     @IsOptional()
-    @IsPositive()
     min: number;
 
     @IsOptional()
-    @IsPositive()
     max: number;
 }
