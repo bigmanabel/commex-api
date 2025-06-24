@@ -1,22 +1,17 @@
-# Commex API
+# 🛒 Commex API
 
-<p align="center">
-  <img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" />
-</p>
+<div align="center">
 
-<p align="center">A comprehensive e-commerce product management API built with NestJS, TypeScript, and PostgreSQL.</p>
+**A comprehensive e-commerce product management API**
 
-<p align="center">
-  <a href="https://nestjs.com/" target="_blank">
-    <img src="https://img.shields.io/badge/built%20with-NestJS-red.svg" alt="Built with NestJS">
-  </a>
-  <a href="https://www.typescriptlang.org/" target="_blank">
-    <img src="https://img.shields.io/badge/language-TypeScript-blue.svg" alt="Language TypeScript">
-  </a>
-  <a href="https://www.postgresql.org/" target="_blank">
-    <img src="https://img.shields.io/badge/database-PostgreSQL-blue.svg" alt="Database PostgreSQL">
-  </a>
-</p>
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)](https://nestjs.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+
+_Built with modern technologies for scalable e-commerce solutions_
+
+</div>
 
 ## 📋 Description
 
@@ -59,12 +54,14 @@ Commex API is a robust e-commerce backend service that provides comprehensive pr
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd commex-api
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    # or
@@ -72,21 +69,24 @@ Commex API is a robust e-commerce backend service that provides comprehensive pr
    ```
 
 3. **Environment Configuration**
+
    ```bash
    cp .env.example .env
    # Edit .env file with your configuration
    ```
 
 4. **Start the database (using Docker)**
+
    ```bash
    docker-compose up -d db
    ```
 
 5. **Run the application**
+
    ```bash
    # Development mode with auto-reload
    npm run start:dev
-   
+
    # Production mode
    npm run start:prod
    ```
@@ -134,6 +134,7 @@ Visit `http://localhost:3000/api` for the interactive Swagger documentation.
 ### Main Endpoints
 
 #### Products
+
 - `GET /products` - Get all products with filtering and pagination
 - `GET /products/:id` - Get a specific product
 - `POST /products` - Create a new product (with image upload)
@@ -141,6 +142,7 @@ Visit `http://localhost:3000/api` for the interactive Swagger documentation.
 - `DELETE /products/:id` - Delete a product
 
 #### Categories
+
 - `GET /categories` - Get all categories
 - `GET /categories/:id` - Get a specific category
 - `POST /categories` - Create a new category
@@ -148,24 +150,28 @@ Visit `http://localhost:3000/api` for the interactive Swagger documentation.
 - `DELETE /categories/:id` - Delete a category
 
 #### Regions
+
 - `GET /regions` - Get all regions
 - `POST /regions` - Create a new region
 - `PATCH /regions/:id` - Update a region
 - `DELETE /regions/:id` - Delete a region
 
 #### Cart
+
 - `GET /cart` - Get cart items
 - `POST /cart` - Add item to cart
 - `PATCH /cart/:id` - Update cart item quantity
 - `DELETE /cart/:id` - Remove item from cart
 
 #### Stock
+
 - `GET /stock` - Get stock information for all products
 - `GET /stock/:id` - Get stock for a specific product
 
 ### Query Parameters
 
 #### Product Filtering
+
 ```bash
 GET /products?name=laptop&category=1&region=2&min=100&max=1000&limit=10&offset=0
 ```
@@ -242,15 +248,15 @@ npm run start:prod
 
 ## 🚦 Environment Variables
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `DB_HOST` | Database host | `localhost` |
-| `DB_PORT` | Database port | `5432` |
-| `DB_NAME` | Database name | `commex_db` |
-| `DB_USER` | Database username | `postgres` |
-| `DB_PASS` | Database password | `pass123` |
-| `PORT` | Application port | `3000` |
-| `NODE_ENV` | Environment | `development` |
+| Variable   | Description       | Default       |
+| ---------- | ----------------- | ------------- |
+| `DB_HOST`  | Database host     | `localhost`   |
+| `DB_PORT`  | Database port     | `5432`        |
+| `DB_NAME`  | Database name     | `commex_db`   |
+| `DB_USER`  | Database username | `postgres`    |
+| `DB_PASS`  | Database password | `pass123`     |
+| `PORT`     | Application port  | `3000`        |
+| `NODE_ENV` | Environment       | `development` |
 
 ## 🤝 Contributing
 
@@ -279,8 +285,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📞 Support
 
-If you have any questions or need help, please open an issue or contact the development team.
-
----
-
-**Built with ❤️ using NestJS**
+If you have any questions or need help, please open an issue.
