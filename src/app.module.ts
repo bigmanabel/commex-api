@@ -11,25 +11,26 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DB_HOST,
-      port: +process.env.DB_PORT,
-      database: process.env.DB_NAME,
-      username: process.env.DB_USER,
-      password: process.env.DB_PASS,
+      host: process.env.DB_HOST || 'localhost',
+      port: parseInt(process.env.DB_PORT) || 5432,
+      database: process.env.DB_NAME || 'commex_db',
+      username: process.env.DB_USER || 'postgres',
+      password: process.env.DB_PASS || 'pass123',
       autoLoadEntities: true,
-      synchronize: true,
-      // ssl: {
-      //   rejectUnauthorized: false,
-      // }
+      synchronize: process.env.NODE_ENV === 'development', // Only in development
+      logging: process.env.NODE_ENV === 'development',
     }),
     ProductsModule,
     CartModule,
     StockModule,
     RegionsModule,
-    CategoriesModule],
+    CategoriesModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

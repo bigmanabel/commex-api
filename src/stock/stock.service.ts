@@ -38,10 +38,8 @@ export class StockService {
 
   async findOne(id: number) {
     try {
-      const product = await this.productRepository.find({
-        where: {
-          id
-        },
+      const product = await this.productRepository.findOne({
+        where: { id },
         select: {
           id: true,
           name: true,
@@ -52,6 +50,12 @@ export class StockService {
       if (!product) {
         throw new NotFoundException('Product not found');
       }
+
+      return {
+        statusCode: HttpStatus.OK,
+        message: 'Product stock retrieved successfully',
+        data: product,
+      };
     } catch (error) {
       if (error.status === HttpStatus.NOT_FOUND) {
         throw new NotFoundException(error.message);

@@ -1,8 +1,15 @@
 services:
   db:
-   image: postgres:alpine
-   restart: always
-   ports:
-    - '5432:5432'
-   environment: 
-    POSTGRES_PASSWORD: 'pass123'
+    image: postgres:alpine
+    restart: always
+    ports:
+      - '5432:5432'
+    environment: 
+      POSTGRES_DB: commex_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pass123
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

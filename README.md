@@ -1,73 +1,286 @@
+# Commex API
+
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+  <img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" />
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<p align="center">A comprehensive e-commerce product management API built with NestJS, TypeScript, and PostgreSQL.</p>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+<p align="center">
+  <a href="https://nestjs.com/" target="_blank">
+    <img src="https://img.shields.io/badge/built%20with-NestJS-red.svg" alt="Built with NestJS">
+  </a>
+  <a href="https://www.typescriptlang.org/" target="_blank">
+    <img src="https://img.shields.io/badge/language-TypeScript-blue.svg" alt="Language TypeScript">
+  </a>
+  <a href="https://www.postgresql.org/" target="_blank">
+    <img src="https://img.shields.io/badge/database-PostgreSQL-blue.svg" alt="Database PostgreSQL">
+  </a>
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## 📋 Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Commex API is a robust e-commerce backend service that provides comprehensive product management capabilities. Built with modern technologies including NestJS, TypeScript, PostgreSQL, and TypeORM, it offers a scalable foundation for e-commerce applications.
 
-## Installation
+## ✨ Features
+
+- **Product Management**: Complete CRUD operations for products with image support
+- **Category Management**: Organize products into categories
+- **Region Management**: Support for geographical regions
+- **Shopping Cart**: Add, update, and manage cart items
+- **Stock Management**: Track product inventory
+- **Advanced Filtering**: Search products by name, category, region, and price range
+- **Pagination**: Efficient data loading with pagination support
+- **API Documentation**: Interactive Swagger/OpenAPI documentation
+- **Data Validation**: Comprehensive input validation using class-validator
+- **Database Relations**: Well-structured entity relationships
+- **File Upload**: Support for product image uploads
+
+## 🛠️ Technology Stack
+
+- **Backend Framework**: NestJS
+- **Language**: TypeScript
+- **Database**: PostgreSQL
+- **ORM**: TypeORM
+- **Validation**: class-validator & class-transformer
+- **Documentation**: Swagger/OpenAPI
+- **File Upload**: Multer
+- **Container**: Docker & Docker Compose
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+- Docker and Docker Compose (optional)
+- PostgreSQL (if not using Docker)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd commex-api
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Environment Configuration**
+   ```bash
+   cp .env.example .env
+   # Edit .env file with your configuration
+   ```
+
+4. **Start the database (using Docker)**
+   ```bash
+   docker-compose up -d db
+   ```
+
+5. **Run the application**
+   ```bash
+   # Development mode with auto-reload
+   npm run start:dev
+   
+   # Production mode
+   npm run start:prod
+   ```
+
+The API will be available at `http://localhost:3000`
+Swagger documentation: `http://localhost:3000/api`
+
+## 🐳 Docker Setup
+
+### Using Docker Compose (Recommended)
 
 ```bash
-$ yarn install
+# Start all services
+docker-compose up -d
+
+# View logs
+docker-compose logs -f
+
+# Stop services
+docker-compose down
 ```
 
-## Running the app
+### Manual Database Setup
+
+If you prefer to run PostgreSQL manually:
 
 ```bash
-# development
-$ yarn run start
+# Create database
+createdb commex_db
 
-# watch mode
-$ yarn run start:dev
-
-# production mode
-$ yarn run start:prod
+# Update .env with your database credentials
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=commex_db
+DB_USER=your_username
+DB_PASS=your_password
 ```
 
-## Test
+## 📚 API Documentation
+
+### Interactive Documentation
+
+Visit `http://localhost:3000/api` for the interactive Swagger documentation.
+
+### Main Endpoints
+
+#### Products
+- `GET /products` - Get all products with filtering and pagination
+- `GET /products/:id` - Get a specific product
+- `POST /products` - Create a new product (with image upload)
+- `PATCH /products/:id` - Update a product
+- `DELETE /products/:id` - Delete a product
+
+#### Categories
+- `GET /categories` - Get all categories
+- `GET /categories/:id` - Get a specific category
+- `POST /categories` - Create a new category
+- `PATCH /categories/:id` - Update a category
+- `DELETE /categories/:id` - Delete a category
+
+#### Regions
+- `GET /regions` - Get all regions
+- `POST /regions` - Create a new region
+- `PATCH /regions/:id` - Update a region
+- `DELETE /regions/:id` - Delete a region
+
+#### Cart
+- `GET /cart` - Get cart items
+- `POST /cart` - Add item to cart
+- `PATCH /cart/:id` - Update cart item quantity
+- `DELETE /cart/:id` - Remove item from cart
+
+#### Stock
+- `GET /stock` - Get stock information for all products
+- `GET /stock/:id` - Get stock for a specific product
+
+### Query Parameters
+
+#### Product Filtering
+```bash
+GET /products?name=laptop&category=1&region=2&min=100&max=1000&limit=10&offset=0
+```
+
+- `name`: Filter by product name (partial match)
+- `category`: Filter by category ID
+- `region`: Filter by region ID
+- `min`: Minimum price filter
+- `max`: Maximum price filter
+- `limit`: Number of items to return (default: 10)
+- `offset`: Number of items to skip (default: 0)
+
+## 🧪 Testing
 
 ```bash
-# unit tests
-$ yarn run test
+# Run unit tests
+npm run test
 
-# e2e tests
-$ yarn run test:e2e
+# Run e2e tests
+npm run test:e2e
 
-# test coverage
-$ yarn run test:cov
+# Run tests with coverage
+npm run test:cov
+
+# Run tests in watch mode
+npm run test:watch
 ```
 
-## Support
+## 🔧 Development
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### Project Structure
 
-## Stay in touch
+```
+src/
+├── app.module.ts          # Main application module
+├── main.ts               # Application entry point
+├── cart/                 # Shopping cart module
+├── categories/           # Categories module
+├── products/            # Products module
+├── regions/             # Regions module
+├── stock/               # Stock management module
+└── shared/              # Shared utilities and DTOs
+```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### Code Style
 
-## License
+The project uses ESLint and Prettier for code formatting:
 
-Nest is [MIT licensed](LICENSE).
+```bash
+# Format code
+npm run format
+
+# Lint code
+npm run lint
+```
+
+### Building for Production
+
+```bash
+# Build the application
+npm run build
+
+# Start production server
+npm run start:prod
+```
+
+## 🔒 Security Considerations
+
+- **Environment Variables**: Never commit `.env` files to version control
+- **Database**: Use strong passwords and limit database access
+- **Validation**: All inputs are validated using class-validator
+- **CORS**: Configured to allow cross-origin requests (configure for production)
+- **Synchronize**: Database synchronization is disabled in production
+
+## 🚦 Environment Variables
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `DB_HOST` | Database host | `localhost` |
+| `DB_PORT` | Database port | `5432` |
+| `DB_NAME` | Database name | `commex_db` |
+| `DB_USER` | Database username | `postgres` |
+| `DB_PASS` | Database password | `pass123` |
+| `PORT` | Application port | `3000` |
+| `NODE_ENV` | Environment | `development` |
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🔮 Future Enhancements
+
+- [ ] Authentication and Authorization (JWT)
+- [ ] User management system
+- [ ] Order management
+- [ ] Payment integration
+- [ ] Advanced search with Elasticsearch
+- [ ] Caching with Redis
+- [ ] Rate limiting
+- [ ] Email notifications
+- [ ] Admin dashboard
+- [ ] Multi-language support
+
+## 📞 Support
+
+If you have any questions or need help, please open an issue or contact the development team.
+
+---
+
+**Built with ❤️ using NestJS**
